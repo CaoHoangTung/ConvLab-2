@@ -44,7 +44,12 @@ class BERTNLU(NLU):
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
             print('Load from model_file param')
-            archive_file = cached_path(model_file)
+
+            if "http" in model_file:
+                archive_file = cached_path(model_file)
+            else:
+                archive_file = model_file
+                
             archive = zipfile.ZipFile(archive_file, 'r')
             archive.extractall(root_dir)
             archive.close()

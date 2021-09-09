@@ -12,7 +12,7 @@
     "context": true,
     "context_grad": false,
     "pretrained_weights": "bert-base-uncased",
-    "check_step": 1000,
+    "check_step": 500,
     "max_step": 10000,
     "batch_size": 40,
     "learning_rate": 1e-4,
